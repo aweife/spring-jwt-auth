@@ -3,13 +3,13 @@ server:
 
 spring:
   datasource:
-    username: root
+    username: admin
     password: letmeinpls
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/spring-jwt-auth?createDatabaseIfNotExist=true
+    url: jdbc:mysql://test-1.c6htqhzutcbg.ap-northeast-1.rds.amazonaws.com:3306/spring-jwt-auth?createDatabaseIfNotExist=true
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
 #rsa:
 #  private-key: classpath:certs/private.pem
 #  public-key: classpath:certs/public.pem
