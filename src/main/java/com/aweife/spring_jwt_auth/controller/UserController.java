@@ -4,23 +4,25 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
+
 @RestController
 public class UserController {
 
     @GetMapping("/")
-    public String all() {
-        return "Hello world";
+    public String all(Principal principal) {
+        return "Hello, " + principal.getName();
     }
 
     @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("/user")
     public String user() {
-        return "Hello user";
+        return "I am user";
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/admin")
     public String admin() {
-        return "Hello admin";
+        return "I am admin";
     }
 }

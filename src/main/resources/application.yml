@@ -10,3 +10,16 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
+#rsa:
+#  private-key: classpath:certs/private.pem
+#  public-key: classpath:certs/public.pem
+
+# to generate asymmetric keys
+#   for keypair.pem
+#     openssl genrsa -out keypair.pem 2048
+#   for public.pem
+#     openssl rsa -in keypair.pem -pubout -out public.pem
+#   for private.pem
+#     openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out private.pem
+
+
